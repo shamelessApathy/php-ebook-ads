@@ -1,0 +1,13 @@
+.blue-box
+{
+	width:200px;
+	height:200px;
+	background-color:blue;
+}
+.ad-template-container
+{
+	width:400px;
+	height:600px;
+	border:1px solid black;
+	margin:0 auto;
+}
