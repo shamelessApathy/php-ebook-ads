@@ -12,6 +12,13 @@
 			<div class='ad-sidebar-right ad-temp'>
 				<div class='ad-modal'>Stuff in here</div>
 			</div>
+							<div class='ebook-form-container'>
+					<form name='ebook-form' action='/ebook/upload' method="POST" enctype="multipart/form-data">
+						<label>EBook</label><br>
+						<input type='file' name='ebook' placeholder='Choose Ebook File'/><br>
+						<button type='submit'>Upload</button>
+					</form>
+				</div>
 			<div style='clear:both; float:none; width:100%;'></div>
 		</div>
 		<div class='ad-template-bottom ad-temp'>
