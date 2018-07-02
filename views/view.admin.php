@@ -6,11 +6,18 @@
 	<div class='ad-template-container'>
 		<div class='ad-template-top ad-temp'><div class='ad-modal'>Stuff in here</div><p style='text-align:center;'>Top Ad Section</p></div>
 		<div class='ad-sidebar-contaner'>
-			<div class='ad-sidebar-left ad-temp'></div>
-			<div class='ad-sidebar-right ad-temp'></div>
+			<div class='ad-sidebar-left ad-temp'>
+				<div class='ad-modal'>Stuff in here</div>
+			</div>
+			<div class='ad-sidebar-right ad-temp'>
+				<div class='ad-modal'>Stuff in here</div>
+			</div>
 			<div style='clear:both; float:none; width:100%;'></div>
 		</div>
-		<div class='ad-template-bottom ad-temp'><p style='text-align:center'>Bottom Ad Template</p></div>
+		<div class='ad-template-bottom ad-temp'>
+			<div class='ad-modal'>Stuff in here</div>
+			<p style='text-align:center'>Bottom Ad Template</p>
+		</div>
 	</div>
 </div>
 
