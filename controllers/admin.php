@@ -40,6 +40,10 @@ class adminController {
 			return_view('view.admin.php');
 		}
 	}
+	public function main()
+	{
+		return_view('view.admin.php');
+	}
 }
 
 ?>
