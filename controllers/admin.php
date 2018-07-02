@@ -4,7 +4,17 @@ class adminController {
 
 	public function login()
 	{
-		return_view('view.login.php');
+		require_once(MODELS . "/Admin.php");
+		$admin_model = new Admin();
+		$test = $admin_model->user_exists();
+		if (!$test)
+		{
+			return_view('view.create_user.php');
+		}
+		else
+		{
+			return_view('view.login.php');
+		}
 	}
 	public function create()
 	{
@@ -25,7 +35,15 @@ class adminController {
 		{
 			require_once(MODELS . '/Admin.php');
 			$admin_model = new Admin();
-			$admin_model->create_user($username,$email,$pass1);
+			$result = $admin_model->create_user($username,$email,$pass1);
+			if ($result)
+			{
+				return_view('view.login.php');
+			}
+			else
+			{
+				return_view('view.create_user.php');
+			}
 		}
 	}
 	public function verify()

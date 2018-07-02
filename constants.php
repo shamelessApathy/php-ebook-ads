@@ -14,4 +14,5 @@ define('GLOBALS', ROOT . '/globals.php');
 define('VIEWS', ROOT. '/views');
 define('MODELS', ROOT . '/models');
 
+
 ?>

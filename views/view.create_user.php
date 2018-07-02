@@ -1,6 +1,7 @@
 <?php require_once(HEADER);?>
 <div class='container'>
 <h3 style='text-align:center;'>PHP EBook Ads Tool</h3>
+<h4 style='text-align:center;'>Create New User</h4>
 	<form action='/admin/new_user' method='POST'>
 		<label>Username</label><br>
 		<input type='text' name='username' placeholder='username'/><br>
