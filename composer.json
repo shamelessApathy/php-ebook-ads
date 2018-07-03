@@ -1,0 +1,6 @@
+{
+    "name": "root/php-ebook-ads",
+    "require": {
+        "phpoffice/phpword": "^0.14.0"
+    }
+}
