@@ -3,35 +3,27 @@ require_once(GLOBALS);
 
 class ebookController {
 	
-//for .docx
-//$text = shell_exec('/usr/local/bin/docx2txt.pl ' . 
-//    escapeshellarg($docxFilePath) . ' -');
-	public function upload()
+	public function view($page = null)
 	{
-		$file = $_FILES['ebook'];
-		if ($file['type'] === "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+		$directory = ROOT . "/ebookfiles/SD-book";
+		$test = scandir($directory);
+		array_shift($test);
+		array_shift($test);
+		if (isset($page) && $page != null)
 		{
-			$name = $file['tmp_name'];
-			$splode = explode('/', $name);
-			$newName = $splode[1] . ".docx";
-			$actualName = $file['name'];
-			$splodeExt = explode(".",$actualName);
-			$length = count($splodeExt) - 1;
-			$ext = $splodeExt[$length];
-			echo $ext . "<br>";
-			echo $length . "<br>";
-			var_dump($splodeExt);
-			echo "<br>". $actualName;
-			$actualName = time() . $actualName;
-			echo "<br> $actualName";
-			$fileName = "/var/www/php-ebook-ads/ebookfiles/".  $actualName;
-			// USe of is_uploaded_file is to check and make sure it's from a POST digital uplaod not from malicious script
-			$test = move_uploaded_file($_FILES["ebook"]["tmp_name"], "/var/www/php-ebook-ads/ebookfiles/" . $actualName);
-			if ($test === true)
-			{
-				$text = shell_exec('/usr/local/bin/docx2txt.pl ' . escapeshellarg($filename) . ' -');
-				var_dump($text);
-			}
+			// set page  number to be passed before changing it
+			$pageNum = $page;
+			$page = $page -1;
+			$current = $test[$page];
+
+			$info_array = array("page" => $current, "page-number"=>$pageNum);
+			return_view('view.book.php', $info_array);
 		}
+		else
+		{
+			$info_array = array("page" => $test[0], "page-number" => 1);
+			return_view('view.book.php', $info_array);
+		}
+		
 	}
 }

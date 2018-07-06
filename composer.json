@@ -1,6 +1,7 @@
 {
     "name": "root/php-ebook-ads",
     "require": {
-        "phpoffice/phpword": "^0.14.0"
+        "phpoffice/phpword": "^0.14.0",
+        "imagine/imagine": "^0.7.1"
     }
 }
